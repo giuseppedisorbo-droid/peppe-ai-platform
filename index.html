@@ -1,4 +1,18 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Peppe AI Platform</title>
+</head>
+
+<body>
+
+<h1>Peppe AI Platform</h1>
+<h2>Kinesiterapia 2</h2>
+
+<h3>Lezioni disponibili</h3>
 <ul id="lezioni-lista"></ul>
+
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
@@ -15,7 +29,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// 🔥 QUI CREIAMO LA LISTA AUTOMATICA
 async function caricaLezioni() {
   const querySnapshot = await getDocs(collection(db, "lezioni"));
 
@@ -39,3 +52,6 @@ async function caricaLezioni() {
 
 caricaLezioni();
 </script>
+
+</body>
+</html>
